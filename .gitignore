@@ -10,3 +10,14 @@ frontend/node_modules/
 .vscode/
 
 *.log
+
+backend/venv/
+backend/__pycache__/
+backend/.env
+
+venv/
+__pycache__/
+.env
+
+node_modules/
+frontend/node_modules/
