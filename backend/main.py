@@ -1,4 +1,4 @@
-import os
+
 from fastapi import FastAPI
 
 from routes.chat import router as chat_router
@@ -23,11 +23,3 @@ def home():
         "message": "Customer Care AI Agent is running"
     }
 
-
-@app.get("/debug-env")
-def debug_env():
-    key = os.getenv("GOOGLE_API_KEY")
-    return {
-        "exists": key is not None,
-        "length": len(key) if key else 0
-    }
