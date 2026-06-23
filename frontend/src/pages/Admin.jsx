@@ -17,7 +17,7 @@ function Admin() {
   if (!stats) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <h2 className="text-2xl font-bold">Loading Dashboard...</h2>
+        <h2 className="text-2xl focsnt-bold">Loading Dashboard...</h2>
       </div>
     );
   }
