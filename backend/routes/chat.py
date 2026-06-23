@@ -3,7 +3,7 @@ from services.gemini_service import ask_gemini
 from pydantic import BaseModel
 from sqlalchemy import text
 from database.postgres import SessionLocal
-from rag.retriever import search_docs
+#from rag.retriever import search_docs
 from services.sentiment_service import detect_sentiment
 import re
 
@@ -102,15 +102,8 @@ def chat(request: ChatRequest):
             "response": response
         }
 
-    context = search_docs(request.message)
-
     prompt = f"""
     You are a professional customer support agent.
-
-    Use the following company policy information to answer the customer.
-
-    Context:
-    {context}
 
     Customer Question:
     {request.message}
