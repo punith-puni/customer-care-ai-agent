@@ -5,11 +5,11 @@ function Admin() {
   const [tickets, setTickets] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/admin/stats")
+    fetch("https://customer-care-ai-agent.onrender.com/admin/stats")
       .then((res) => res.json())
       .then((data) => setStats(data));
 
-    fetch("http://127.0.0.1:8000/admin/tickets")
+    fetch("https://customer-care-ai-agent.onrender.com/admin/tickets")
       .then((res) => res.json())
       .then((data) => setTickets(data));
   }, []);
