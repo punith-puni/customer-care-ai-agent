@@ -13,10 +13,5 @@ def ask_gemini(prompt):
     return response.text
 
 
-@app.get("/debug-env")
-def debug_env():
-    key = os.getenv("GOOGLE_API_KEY")
-    return {
-        "exists": key is not None,
-        "length": len(key) if key else 0
+
     }
