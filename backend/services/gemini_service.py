@@ -14,4 +14,4 @@ def ask_gemini(prompt):
 
 
 
-    }
+    
