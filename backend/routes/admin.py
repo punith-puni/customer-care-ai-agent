@@ -42,3 +42,22 @@ def admin_stats():
         "open_tickets": open_tickets,
         "escalated_tickets": escalated_tickets
     }
+
+@router.get("/admin/tickets")
+def get_tickets():
+    db = SessionLocal()
+
+    tickets = db.execute(
+        text("""
+            SELECT id,
+                   customer_message,
+                   priority,
+                   status
+            FROM tickets
+            ORDER BY id DESC
+        """)
+    ).mappings().all()
+
+    db.close()
+
+    return tickets
